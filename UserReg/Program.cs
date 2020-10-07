@@ -9,6 +9,7 @@ namespace UserReg
             Console.WriteLine("Welcome to User Registration");
             Pattern pattern = new Pattern();
             pattern.checkFirstName();
+            pattern.checkLastName();
         }
     }
 }
