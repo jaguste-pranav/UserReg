@@ -12,6 +12,7 @@ namespace UserReg
         string emailReGex = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
         string phoneRegex = "^[1-9][0-9]{1}[ ][1-9]{1}[0-9]{9}$";
         string passwordRegex = "^[a-zA-Z0-9.*|><?:;_#%-@$]{8,}$";
+        string capLetterRegex = "[A-Z]+";
 
         public void checkFirstName()
         {
@@ -78,7 +79,7 @@ namespace UserReg
             Console.WriteLine("Enter your Password: ");
             string password = Console.ReadLine();
 
-            if (Regex.IsMatch(password, passwordRegex) == true)
+            if (Regex.IsMatch(password, passwordRegex) && Regex.IsMatch(password, capLetterRegex))
             {
                 Console.WriteLine("Password " + password + " is valid");
             }
