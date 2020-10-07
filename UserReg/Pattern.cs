@@ -14,6 +14,7 @@ namespace UserReg
         string passwordRegex = "^[a-zA-Z0-9.*|><?:;_#%-@$]{8,}$";
         string capLetterRegex = "[A-Z]+";
         string numericalRegex = "[0-9]+";
+        string specialCharRegex = "[.*|><?:;_#%-@$]{1}";
 
         public void checkFirstName()
         {
@@ -76,11 +77,11 @@ namespace UserReg
         }
 
         public void checkPassword()
-        {
+        { 
             Console.WriteLine("Enter your Password: ");
             string password = Console.ReadLine();
 
-            if (Regex.IsMatch(password, passwordRegex) && Regex.IsMatch(password, capLetterRegex) && Regex.IsMatch(password, numericalRegex))
+            if (Regex.IsMatch(password, passwordRegex) && Regex.IsMatch(password, capLetterRegex) && Regex.IsMatch(password, numericalRegex) && Regex.IsMatch(password, specialCharRegex))
             {
                 Console.WriteLine("Password " + password + " is valid");
             }
