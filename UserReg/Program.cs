@@ -10,6 +10,8 @@ namespace UserReg
             Pattern pattern = new Pattern();
             pattern.checkFirstName();
             pattern.checkLastName();
+            pattern.checkEmail();
+            pattern.checkPhone();
         }
     }
 }
