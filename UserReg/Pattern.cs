@@ -9,6 +9,7 @@ namespace UserReg
     {
         string firstNameReGex = "^[A-Z][a-z]{2,}$";
         string lastNameReGex = "^[A-Z][a-z]{2,}$";
+        string emailReGex = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
 
         public void checkFirstName()
         {
@@ -39,5 +40,21 @@ namespace UserReg
                 Console.WriteLine("Last Name " + lastName + " is not valid");
             }
         }
+
+        public void checkEmail()
+        {
+            Console.WriteLine("Enter your Email Id: ");
+            string emailId = Console.ReadLine();
+
+            if (Regex.IsMatch(emailId, emailReGex) == true)
+            {
+                Console.WriteLine("Mail Id " + emailId + " is valid");
+            }
+            else
+            {
+                Console.WriteLine("Mail Id " + emailId + " is not valid");
+            }
+        }
+
     }
 }
