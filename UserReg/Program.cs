@@ -12,7 +12,7 @@ namespace UserReg
             //pattern.checkLastName();
             //pattern.checkEmail();
             //pattern.checkPhone();
-            pattern.checkPassword();
+            //pattern.checkPassword();
         }
     }
 }
