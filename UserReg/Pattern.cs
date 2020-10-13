@@ -15,71 +15,127 @@ namespace UserReg
 
         public bool checkFirstName(string firstName)
         {
-            if (Regex.IsMatch(firstName, firstNameReGex) == true)
+            try
             {
-                Console.WriteLine("First Name " + firstName + " is valid");
-                return true;
+                if(firstName.Equals(""))
+                {
+                    throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.EMPTY_INPUT, "First Name cannot be empty");
+                }
+                if (Regex.IsMatch(firstName, firstNameReGex) == true)
+                {
+                    Console.WriteLine("First Name " + firstName + " is valid");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("First Name " + firstName + " is not valid");
+                    return false;
+                }
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("First Name " + firstName + " is not valid");
-                return false;
+                throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.NULL_INPUT, "First Name cannot be null");
             }
         }
 
         public bool checkLastName(string lastName)
         {
-            if (Regex.IsMatch(lastName, lastNameReGex) == true)
+            try
             {
-                Console.WriteLine("Last Name " + lastName + " is valid");
-                return true;
+                if (lastName.Equals(""))
+                {
+                    throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.EMPTY_INPUT, "Last Name cannot be empty");
+                }
+
+                if (Regex.IsMatch(lastName, lastNameReGex) == true)
+                {
+                    Console.WriteLine("Last Name " + lastName + " is valid");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Last Name " + lastName + " is not valid");
+                    return false;
+                }
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Last Name " + lastName + " is not valid");
-                return false;
+                throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.NULL_INPUT, "Last Name cannot be null");
             }
         }
 
         public bool checkEmail(string emailId)
         {
-            if (Regex.IsMatch(emailId, emailReGex) == true)
+            try
             {
-                Console.WriteLine("Mail Id " + emailId + " is valid");
-                return true;
+                if (emailId.Equals(""))
+                {
+                    throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.EMPTY_INPUT, "Email cannot be empty");
+                }
+                if (Regex.IsMatch(emailId, emailReGex) == true)
+                {
+                    Console.WriteLine("Mail Id " + emailId + " is valid");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Mail Id " + emailId + " is not valid");
+                    return false;
+                }
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Mail Id " + emailId + " is not valid");
-                return false;
+                throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.NULL_INPUT, "Email cannot be null");
             }
         }
 
         public bool checkPhone(string phoneNo)
         {
-            if (Regex.IsMatch(phoneNo, phoneRegex) == true)
+            try
             {
-                Console.WriteLine("Phone No " + phoneNo + " is valid");
-                return true;
+                if (phoneNo.Equals(""))
+                {
+                    throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.EMPTY_INPUT, "Phone cannot be empty");
+                }
+                if (Regex.IsMatch(phoneNo, phoneRegex) == true)
+                {
+                    Console.WriteLine("Phone No " + phoneNo + " is valid");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Phone No " + phoneNo + " is not valid");
+                    return false;
+                }
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Phone No " + phoneNo + " is not valid");
-                return false;
+                throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.NULL_INPUT, "Phone cannot be null");
             }
         }
 
         public bool checkPassword(string password)
         {
-            if (Regex.IsMatch(password, passwordRegex))
+            try
             {
-                Console.WriteLine("Password " + password + " is valid");
-                return true;
+                if (password.Equals(""))
+                {
+                    throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.EMPTY_INPUT, "Password cannot be empty");
+                }
+                if (Regex.IsMatch(password, passwordRegex))
+                {
+                    Console.WriteLine("Password " + password + " is valid");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Password " + password + " is not valid");
+                    return false;
+                }
             }
-            else
+            catch (NullReferenceException)
             {
-                Console.WriteLine("Password " + password + " is not valid");
-                return false;
+                throw new UserRegCustomExceptions(UserRegCustomExceptions.ExceptionType.NULL_INPUT, "Password cannot be null");
             }
         }
     }
