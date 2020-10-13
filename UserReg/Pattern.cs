@@ -5,89 +5,81 @@ using System.Text.RegularExpressions;
 
 namespace UserReg
 {
-    class Pattern
+    public class Pattern
     {
         string firstNameReGex = "^[A-Z][a-z]{2,}$";
         string lastNameReGex = "^[A-Z][a-z]{2,}$";
         string emailReGex = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
         string phoneRegex = "^[1-9][0-9]{1}[ ][1-9]{1}[0-9]{9}$";
-        string passwordRegex = "^[a-zA-Z0-9.*|><?:;_#%-@$]{8,}$";
-        string capLetterRegex = "[A-Z]+";
-        string numericalRegex = "[0-9]+";
-        string specialCharRegex = "[.*|><?:;_#%-@$]{1}";
+        string passwordRegex = "((?=.*[A - Z])(?=.*[0 - 9])(?= ^[a - zA - Z0 - 9] *[@$#^!-+][a-zA-Z0-9]*$)).{8,}";
 
-        public void checkFirstName()
+        public bool checkFirstName(string firstName)
         {
-            Console.WriteLine("Enter your First Name: ");
-            string firstName = Console.ReadLine();
-
             if (Regex.IsMatch(firstName, firstNameReGex) == true)
             {
                 Console.WriteLine("First Name " + firstName + " is valid");
+                return true;
             }
             else
             {
                 Console.WriteLine("First Name " + firstName + " is not valid");
+                return false;
             }
         }
 
-        public void checkLastName()
+        public bool checkLastName(string lastName)
         {
-            Console.WriteLine("Enter your Last Name: ");
-            string lastName = Console.ReadLine();
-
             if (Regex.IsMatch(lastName, lastNameReGex) == true)
             {
                 Console.WriteLine("Last Name " + lastName + " is valid");
+                return true;
             }
             else
             {
                 Console.WriteLine("Last Name " + lastName + " is not valid");
+                return false;
             }
         }
 
-        public void checkEmail()
+        public bool checkEmail(string emailId)
         {
-            Console.WriteLine("Enter your Email Id: ");
-            string emailId = Console.ReadLine();
-
             if (Regex.IsMatch(emailId, emailReGex) == true)
             {
                 Console.WriteLine("Mail Id " + emailId + " is valid");
+                return true;
             }
             else
             {
                 Console.WriteLine("Mail Id " + emailId + " is not valid");
+                return false;
             }
         }
 
-        public void checkPhone()
+        public bool checkPhone(string phoneNo)
         {
-            Console.WriteLine("Enter your Phone Number: ");
-            string phoneNo = Console.ReadLine();
-
             if (Regex.IsMatch(phoneNo, phoneRegex) == true)
             {
                 Console.WriteLine("Phone No " + phoneNo + " is valid");
+                return true;
             }
             else
             {
                 Console.WriteLine("Phone No " + phoneNo + " is not valid");
+                return false;
             }
         }
 
-        public void checkPassword()
-        { 
-            Console.WriteLine("Enter your Password: ");
-            string password = Console.ReadLine();
-
-            if (Regex.IsMatch(password, passwordRegex) && Regex.IsMatch(password, capLetterRegex) && Regex.IsMatch(password, numericalRegex) && Regex.IsMatch(password, specialCharRegex))
+        public bool checkPassword(string password)
+        {
+            if (Regex.IsMatch(password, passwordRegex))
             {
                 Console.WriteLine("Password " + password + " is valid");
+                return true;
             }
             else
             {
                 Console.WriteLine("Password " + password + " is not valid");
+                return false;
             }
         }
     }
