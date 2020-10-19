@@ -23,12 +23,12 @@ namespace UserReg
                 }
                 if (Regex.IsMatch(firstName, firstNameReGex) == true)
                 {
-                    Console.WriteLine("First Name " + firstName + " is valid");
+                    //Console.WriteLine("First Name " + firstName + " is valid");
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("First Name " + firstName + " is not valid");
+                    //Console.WriteLine("First Name " + firstName + " is not valid");
                     return false;
                 }
             }
@@ -49,12 +49,12 @@ namespace UserReg
 
                 if (Regex.IsMatch(lastName, lastNameReGex) == true)
                 {
-                    Console.WriteLine("Last Name " + lastName + " is valid");
+                    //Console.WriteLine("Last Name " + lastName + " is valid");
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Last Name " + lastName + " is not valid");
+                    //Console.WriteLine("Last Name " + lastName + " is not valid");
                     return false;
                 }
             }
@@ -74,12 +74,12 @@ namespace UserReg
                 }
                 if (Regex.IsMatch(emailId, emailReGex) == true)
                 {
-                    Console.WriteLine("Mail Id " + emailId + " is valid");
+                    //Console.WriteLine("Mail Id " + emailId + " is valid");
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Mail Id " + emailId + " is not valid");
+                    //Console.WriteLine("Mail Id " + emailId + " is not valid");
                     return false;
                 }
             }
@@ -99,12 +99,12 @@ namespace UserReg
                 }
                 if (Regex.IsMatch(phoneNo, phoneRegex) == true)
                 {
-                    Console.WriteLine("Phone No " + phoneNo + " is valid");
+                    //Console.WriteLine("Phone No " + phoneNo + " is valid");
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Phone No " + phoneNo + " is not valid");
+                    //Console.WriteLine("Phone No " + phoneNo + " is not valid");
                     return false;
                 }
             }
@@ -124,12 +124,12 @@ namespace UserReg
                 }
                 if (Regex.IsMatch(password, passwordRegex))
                 {
-                    Console.WriteLine("Password " + password + " is valid");
+                    //Console.WriteLine("Password " + password + " is valid");
                     return true;
                 }
                 else
                 {
-                    Console.WriteLine("Password " + password + " is not valid");
+                    //Console.WriteLine("Password " + password + " is not valid");
                     return false;
                 }
             }
